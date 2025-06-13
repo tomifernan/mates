@@ -64,6 +64,34 @@ function clearCart() {
   }
 }
 
+function resetCart() {
+  // Función mejorada para resetear el carrito con confirmación
+  showResetConfirmation()
+}
+
+function forceResetCart() {
+  // Limpiar localStorage completamente
+  localStorage.removeItem("cart")
+
+  // Limpiar cualquier dato corrupto
+  try {
+    localStorage.setItem("cart", JSON.stringify([]))
+  } catch (error) {
+    console.error("Error al limpiar el carrito:", error)
+  }
+
+  // Actualizar contador
+  updateCartCount()
+
+  // Si estamos en la página del carrito, actualizar la vista
+  if (window.location.pathname.includes("cart.html")) {
+    loadCartItems()
+  }
+
+  // Mostrar notificación
+  showNotification("Carrito restablecido correctamente")
+}
+
 function updateCartCount() {
   const cart = getCart()
   const count = cart.reduce((total, item) => total + item.cantidad, 0)
@@ -83,6 +111,7 @@ window.addToCart = addToCart
 window.removeFromCart = removeFromCart
 window.updateCartQuantity = updateCartQuantity
 window.clearCart = clearCart
+window.resetCart = resetCart
 window.getCart = getCart
 
 // Cargar el contador del carrito al cargar la página
@@ -93,7 +122,82 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("cart.html")) {
     loadCartItems()
   }
+
+  // Configurar botones de reset del carrito
+  setupResetCartButtons()
 })
+
+// Configurar botones de reset
+function setupResetCartButtons() {
+  // Botón reset en header (desktop)
+  const resetBtn = document.getElementById("reset-cart-btn")
+  if (resetBtn) {
+    resetBtn.addEventListener("click", resetCart)
+  }
+
+  // Botón reset móvil
+  const mobileResetBtn = document.getElementById("mobile-reset-cart")
+  if (mobileResetBtn) {
+    mobileResetBtn.addEventListener("click", resetCart)
+  }
+
+  // Botón reset en página del carrito
+  const pageResetBtn = document.getElementById("reset-cart-page-btn")
+  if (pageResetBtn) {
+    pageResetBtn.addEventListener("click", resetCart)
+  }
+}
+
+// Mostrar confirmación de reset
+function showResetConfirmation() {
+  const cart = getCart()
+
+  if (cart.length === 0) {
+    showNotification("El carrito ya está vacío")
+    return
+  }
+
+  // Crear modal de confirmación
+  const modal = document.createElement("div")
+  modal.className = "reset-confirmation"
+  modal.innerHTML = `
+    <div class="reset-modal">
+      <h3>¿Vaciar carrito?</h3>
+      <p>Esta acción eliminará todos los productos del carrito. ¿Estás seguro?</p>
+      <div class="reset-modal-buttons">
+        <button class="btn btn-outline" onclick="closeResetModal()">Cancelar</button>
+        <button class="btn btn-primary" onclick="confirmReset()">Sí, vaciar</button>
+      </div>
+    </div>
+  `
+
+  document.body.appendChild(modal)
+
+  // Cerrar modal al hacer clic fuera
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeResetModal()
+    }
+  })
+}
+
+// Cerrar modal de confirmación
+function closeResetModal() {
+  const modal = document.querySelector(".reset-confirmation")
+  if (modal) {
+    modal.remove()
+  }
+}
+
+// Confirmar reset del carrito
+function confirmReset() {
+  forceResetCart()
+  closeResetModal()
+}
+
+// Hacer funciones disponibles globalmente para el modal
+window.closeResetModal = closeResetModal
+window.confirmReset = confirmReset
 
 // Función para cargar los items del carrito en la página del carrito
 function loadCartItems() {

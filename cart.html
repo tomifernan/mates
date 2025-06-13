@@ -18,16 +18,20 @@
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#productos">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="nosotros.html">Quienes somos?</a></li>
-
           </ul>
         </nav>
-        <div class="cart-icon">
-          <a href="cart.html">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-          </a>
+        <div class="header-actions">
+          <div class="cart-icon">
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cart-count">0</span>
+            </a>
+          </div>
+          <button class="reset-cart-btn" id="reset-cart-btn" title="Limpiar carrito">
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
         <div class="mobile-menu-btn">
           <i class="fas fa-bars"></i>
@@ -37,9 +41,12 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="index.html#productos">Productos</a></li>
-          <li><a href="cart.html">Carrito</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="nosotros.html">Quienes somos?</a></li>
+          <li><a href="cart.html">Carrito</a></li>
+          <li><button class="mobile-reset-cart" id="mobile-reset-cart">
+            <i class="fas fa-trash-alt"></i> Limpiar Carrito
+          </button></li>
         </ul>
       </nav>
     </div>
@@ -47,7 +54,12 @@
 
   <section class="cart-section">
     <div class="container">
-      <h1 class="section-title">Tu Carrito</h1>
+      <div class="cart-header">
+        <h1 class="section-title">Tu Carrito</h1>
+        <button class="btn btn-outline reset-cart-page-btn" id="reset-cart-page-btn">
+          <i class="fas fa-trash-alt"></i> Vaciar Carrito
+        </button>
+      </div>
       
       <div id="cart-empty" class="cart-empty">
         <p>Tu carrito está vacío</p>
@@ -107,8 +119,8 @@
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#productos">Productos</a></li>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -150,11 +162,9 @@
     </div>
   </template>
 
-
   <script src="products.js"></script>
   <script src="main.js"></script>
   <script src="cart.js"></script>
   <script src="checkout.js"></script>
-
 </body>
 </html>
