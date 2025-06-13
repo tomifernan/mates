@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Producto - Tienda de Mates</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1>Tienda de Mates</h1>
+        </div>
+        <nav class="desktop-nav">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#productos">Productos</a></li>
+          </ul>
+        </nav>
+        <div class="cart-icon">
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#productos">Productos</a></li>
+          <li><a href="cart.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="product-detail">
+    <div class="container">
+      <div class="product-detail-container" id="product-detail-container">
+        <!-- El detalle del producto se cargará dinámicamente con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Tienda de Mates</h3>
+          <p>La mejor selección de mates y accesorios para disfrutar de tu bebida favorita.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#productos">Productos</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul>
+            <li>WhatsApp: +54 3364039865</li>
+            <li>Email: info@tiendademates.com</li>
+            <li>Dirección: Av. Principal 123, Ciudad</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Tienda de Mates. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Template para el detalle del producto -->
+  <template id="product-detail-template">
+    <div class="product-detail-grid">
+      <div class="product-detail-image">
+        <img src="/placeholder.svg" alt="">
+      </div>
+      <div class="product-detail-info">
+        <h1 class="product-detail-title"></h1>
+        <p class="product-detail-price"></p>
+        <p class="product-detail-description"></p>
+        
+        <div class="quantity-selector">
+          <button class="quantity-btn decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="quantity-btn increase">+</button>
+        </div>
+        
+        <button class="btn btn-primary btn-lg add-to-cart-detail">Agregar al Carrito</button>
+        <a href="index.html#productos" class="btn btn-outline btn-lg">Volver a Productos</a>
+      </div>
+    </div>
+  </template>
+
+<script src="/js/products.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/product-detail.js"></script>
+<script src="/js/cart.js"></script>
+
+</body>
+</html>

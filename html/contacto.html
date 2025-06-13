@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Tienda de Mates</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1><a href="index.html">Tienda de Mates</a></h1>
+        </div>
+        <nav class="desktop-nav">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#productos">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="cart-icon">
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#productos">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="cart.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contáctanos</h1>
+      <p>Estamos aquí para ayudarte con cualquier consulta</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Información de Contacto</h2>
+          <p>¿Tienes alguna pregunta sobre nuestros productos o necesitas ayuda con tu pedido? No dudes en contactarnos.</p>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Dirección</h3>
+              <p>Av. Principal 123<br>Ciudad, Provincia<br>Argentina</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Teléfono</h3>
+              <p>+54 3364039865</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p>+54 3364039865</p>
+              <a href="https://wa.me/3364039865" class="btn btn-primary btn-sm" target="_blank">
+                <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>info@tiendademates.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Horarios de Atención</h3>
+              <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00<br>Domingos: Cerrado</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <h2>Envíanos un Mensaje</h2>
+          <form id="contact-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono">
+            </div>
+            
+            <div class="form-group">
+              <label for="asunto">Asunto *</label>
+              <select id="asunto" name="asunto" required>
+                <option value="">Selecciona un asunto</option>
+                <option value="consulta-producto">Consulta sobre producto</option>
+                <option value="pedido">Consulta sobre pedido</option>
+                <option value="envio">Consulta sobre envío</option>
+                <option value="devolucion">Devolución o cambio</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>¿Hacen envíos a todo el país?</h3>
+          <p>Sí, realizamos envíos a toda Argentina. Los costos y tiempos de envío varían según la ubicación.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cuál es el tiempo de entrega?</h3>
+          <p>El tiempo de entrega es de 3 a 7 días hábiles, dependiendo de tu ubicación y el método de envío seleccionado.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo cambiar o devolver un producto?</h3>
+          <p>Sí, aceptamos cambios y devoluciones dentro de los 15 días posteriores a la compra, siempre que el producto esté en perfectas condiciones.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Los mates vienen curados?</h3>
+          <p>Nuestros mates de calabaza vienen sin curar para que puedas hacerlo según tus preferencias. Incluimos instrucciones detalladas.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Ofrecen garantía en sus productos?</h3>
+          <p>Todos nuestros productos tienen garantía de calidad. Si encuentras algún defecto de fabricación, lo cambiamos sin costo.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo hacer pedidos personalizados?</h3>
+          <p>Sí, ofrecemos servicios de personalización. Contáctanos para conocer las opciones disponibles y precios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Tienda de Mates</h3>
+          <p>La mejor selección de mates y accesorios para disfrutar de tu bebida favorita.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#productos">Productos</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul>
+            <li>WhatsApp: +54 3364039865</li>
+            <li>Email: info@tiendademates.com</li>
+            <li>Dirección: Av. Principal 123, Ciudad</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Tienda de Mates. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
