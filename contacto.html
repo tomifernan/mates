@@ -36,7 +36,7 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="index.html#productos">Productos</a></li>
-          <li><a href="nosotros.html">Quienes somos?</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
           <li><a href="cart.html">Carrito</a></li>
         </ul>
@@ -220,9 +220,40 @@
     </div>
   </footer>
 
-  <script src="js/products.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/contact.js"></script>
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
+  <script src="contacto.js"></script>
+  
+  <!-- Script adicional para asegurar que el menú móvil funcione -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Actualizar año en el footer
+      document.querySelectorAll("#current-year").forEach((el) => {
+        el.textContent = new Date().getFullYear()
+      })
+
+      // Menú móvil
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn")
+      const mobileNav = document.querySelector(".mobile-nav")
+
+      if (mobileMenuBtn && mobileNav) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileNav.classList.toggle("active")
+          console.log("Menú móvil toggled") // Para debug
+        })
+      }
+
+      // Cerrar menú móvil al hacer clic en un enlace
+      const mobileNavLinks = document.querySelectorAll(".mobile-nav a")
+      mobileNavLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          if (mobileNav) {
+            mobileNav.classList.remove("active")
+          }
+        })
+      })
+    })
+  </script>
 </body>
 </html>

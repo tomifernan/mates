@@ -914,6 +914,8 @@ footer {
   animation: fadeIn 0.5s ease forwards;
 }
 
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .desktop-nav {
