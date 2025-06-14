@@ -18,20 +18,13 @@
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </nav>
-        <div class="header-actions">
-          <div class="cart-icon">
-            <a href="cart.html">
-              <i class="fas fa-shopping-cart"></i>
-              <span id="cart-count">0</span>
-            </a>
-          </div>
-          <button class="reset-cart-btn" id="reset-cart-btn" title="Limpiar carrito">
-            <i class="fas fa-trash-alt"></i>
-          </button>
+        <div class="cart-icon">
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
         </div>
         <div class="mobile-menu-btn">
           <i class="fas fa-bars"></i>
@@ -41,12 +34,7 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="#productos">Productos</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
           <li><a href="cart.html">Carrito</a></li>
-          <li><button class="mobile-reset-cart" id="mobile-reset-cart">
-            <i class="fas fa-trash-alt"></i> Limpiar Carrito
-          </button></li>
         </ul>
       </nav>
     </div>
@@ -90,8 +78,8 @@
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
-            <li><a href="nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -127,9 +115,9 @@
     </div>
   </template>
 
-  <!-- Scripts en orden específico para móviles -->
   <script src="products.js"></script>
   <script src="main.js"></script>
+  <script src="cart.js"></script>
   
   <script>
     // Función para desplazamiento suave
@@ -142,10 +130,11 @@
         
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 80,
+            top: targetElement.offsetTop - 80, // Restamos 80px para compensar la altura del header
             behavior: 'smooth'
           });
           
+          // Si el menú móvil está abierto, cerrarlo
           const mobileNav = document.querySelector('.mobile-nav');
           if (mobileNav && mobileNav.classList.contains('active')) {
             mobileNav.classList.remove('active');

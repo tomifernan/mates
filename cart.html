@@ -18,20 +18,13 @@
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#productos">Productos</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </nav>
-        <div class="header-actions">
-          <div class="cart-icon">
-            <a href="cart.html">
-              <i class="fas fa-shopping-cart"></i>
-              <span id="cart-count">0</span>
-            </a>
-          </div>
-          <button class="reset-cart-btn" id="reset-cart-btn" title="Limpiar carrito">
-            <i class="fas fa-trash-alt"></i>
-          </button>
+        <div class="cart-icon">
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
         </div>
         <div class="mobile-menu-btn">
           <i class="fas fa-bars"></i>
@@ -41,12 +34,7 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="index.html#productos">Productos</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
           <li><a href="cart.html">Carrito</a></li>
-          <li><button class="mobile-reset-cart" id="mobile-reset-cart">
-            <i class="fas fa-trash-alt"></i> Limpiar Carrito
-          </button></li>
         </ul>
       </nav>
     </div>
@@ -54,12 +42,7 @@
 
   <section class="cart-section">
     <div class="container">
-      <div class="cart-header">
-        <h1 class="section-title">Tu Carrito</h1>
-        <button class="btn btn-outline reset-cart-page-btn" id="reset-cart-page-btn">
-          <i class="fas fa-trash-alt"></i> Vaciar Carrito
-        </button>
-      </div>
+      <h1 class="section-title">Tu Carrito</h1>
       
       <div id="cart-empty" class="cart-empty">
         <p>Tu carrito está vacío</p>
@@ -119,8 +102,8 @@
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#productos">Productos</a></li>
-            <li><a href="nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -138,9 +121,33 @@
     </div>
   </footer>
 
-  <!-- Scripts en orden específico -->
+  <!-- Template para los items del carrito -->
+  <template id="cart-item-template">
+    <div class="cart-item">
+      <div class="cart-item-image">
+        <img src="/placeholder.svg" alt="">
+      </div>
+      <div class="cart-item-info">
+        <h3 class="cart-item-title"></h3>
+        <p class="cart-item-price"></p>
+      </div>
+      <div class="cart-item-quantity">
+        <button class="quantity-btn decrease">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn increase">+</button>
+      </div>
+      <div class="cart-item-total">
+        <span></span>
+      </div>
+      <button class="cart-item-remove">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
+  </template>
+
   <script src="products.js"></script>
   <script src="main.js"></script>
+  <script src="cart.js"></script>
   <script src="checkout.js"></script>
 </body>
 </html>
