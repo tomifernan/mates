@@ -138,33 +138,10 @@
     </div>
   </footer>
 
-  <!-- Template para los items del carrito -->
-  <template id="cart-item-template">
-    <div class="cart-item">
-      <div class="cart-item-image">
-        <img src="/placeholder.svg" alt="">
-      </div>
-      <div class="cart-item-info">
-        <h3 class="cart-item-title"></h3>
-        <p class="cart-item-price"></p>
-      </div>
-      <div class="cart-item-quantity">
-        <button class="quantity-btn decrease">-</button>
-        <span class="quantity">1</span>
-        <button class="quantity-btn increase">+</button>
-      </div>
-      <div class="cart-item-total">
-        <span></span>
-      </div>
-      <button class="cart-item-remove">
-        <i class="fas fa-trash"></i>
-      </button>
-    </div>
-  </template>
-
+  <!-- Scripts en orden específico -->
   <script src="products.js"></script>
+  <script src="cart-mobile-fix.js"></script>
   <script src="main.js"></script>
-  <script src="cart.js"></script>
   <script src="checkout.js"></script>
 </body>
 </html>
